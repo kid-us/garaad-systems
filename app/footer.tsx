@@ -24,20 +24,26 @@ const Footer = () => {
 
         <div className="lg:flex justify-between">
           <div className="max-w-sm space-y-2">
-            <Image src={""} alt="Logo" height={50} width={50} />
-            <div className="flex gap-x-3">
-              <MapPin />
+            <Image
+              src={"/images/logo.png"}
+              alt="Logo"
+              height={500}
+              width={500}
+              className="w-52"
+            />
+            <div className="flex justify-start gap-x-3 mt-4">
+              <MapPin className="size-6" />
               <p className="text-sm">
                 Empire State Building, 350 5th Avenue, New York, NY10118, United
                 States
               </p>
             </div>
             <div className="flex gap-x-3">
-              <Phone size={16} />
+              <Phone className="size-4" />
               <p className="text-sm">(+1) 1234567890</p>
             </div>
             <div className="flex gap-x-3">
-              <Mail size={16} />
+              <Mail className="size-4" />
               <p className="text-sm">info@garrad-system.com</p>
             </div>
           </div>
@@ -127,7 +133,7 @@ const Footer = () => {
 
       <div className="w-full border-t"></div>
       <div className="relative max-w-7xl mx-auto border-x lg:p-10 leading-0 border-b ">
-        <p className="text-center lg:text-[140px] md:text-[90px] text-7xl font-extrabold lg:pt-16 lg:py-0 py-10">
+        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-16 lg:py-0 py-10 text-secondary opacity-32">
           Garaad Systems
         </p>
       </div>
