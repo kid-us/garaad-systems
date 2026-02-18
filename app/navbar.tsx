@@ -46,7 +46,7 @@ const Navbar = () => {
               n.type === "button" ? (
                 <Button
                   key={n.name + n.path}
-                  className="hover:bg-transparent border border-primary hover:text-secondary transition-all duration-200 text-[15px]"
+                  className="hover:bg-transparent border border-primary hover:border-secondary hover:text-secondary transition-all duration-200 text-[15px]"
                 >
                   {t(n.name)}
                 </Button>
@@ -66,7 +66,7 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild className="cursor-pointer">
                 <Languages className="size-5 hover:text-secondary text-zinc-400" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-16!">
+              <DropdownMenuContent className="min-w-16! rounded">
                 <DropdownMenuItem
                   onClick={async () => {
                     await setUserLocale("en");
@@ -81,7 +81,7 @@ const Navbar = () => {
                   }}
                   className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
                 >
-                  Somali
+                  Swahili
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
