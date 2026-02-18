@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import { getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { Toaster } from "@/components/ui/sonner";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -31,6 +32,7 @@ export default async function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Languages, Menu } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "@/constants/nav-items";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -25,6 +25,7 @@ import { setUserLocale } from "@/services/locale";
 const Navbar = () => {
   const t = useTranslations("Header");
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div className="sticky top-0 z-10 border-b border-zinc-100">
@@ -46,6 +47,7 @@ const Navbar = () => {
               n.type === "button" ? (
                 <Button
                   key={n.name + n.path}
+                  onClick={() => router.push("/contact")}
                   className="hover:bg-transparent border border-primary hover:border-secondary hover:text-secondary transition-all duration-200 text-[15px]"
                 >
                   {t(n.name)}

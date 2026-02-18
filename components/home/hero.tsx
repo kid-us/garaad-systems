@@ -3,8 +3,11 @@
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import TrustedBy from "./trustedBy";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
+
   return (
     <div className="flex md:min-h-screen md:py-32 py-24 justify-center items-center">
       <div className="max-w-6xl mx-auto lg:px-0 px-5">
@@ -24,7 +27,10 @@ const Hero = () => {
           </p>
 
           <div className="flex justify-center gap-x-5 mt-10">
-            <Button className="h-11 md:w-40 hover:bg-transparent hover:text-secondary hover:border hover:border-secondary">
+            <Button
+              onClick={() => router.push("/contact")}
+              className="h-11 md:w-40 hover:bg-transparent hover:text-secondary hover:border hover:border-secondary"
+            >
               Get in touch
             </Button>
             <Button variant={"outline"} className="h-11 md:px-10!">

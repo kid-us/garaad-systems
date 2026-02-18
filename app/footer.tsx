@@ -5,8 +5,11 @@ import { footerItems, socialMedias } from "@/constants/footer";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
     <div className="relative border-t">
       <div className="max-w-7xl mx-auto border-x p-10">
@@ -15,7 +18,9 @@ const Footer = () => {
             Building Smarter, Digital Institutions
           </p>
           <div className="flex justify-center mt-6">
-            <Button>Get in touch</Button>
+            <Button onClick={() => router.push("/contact")}>
+              Get in touch
+            </Button>
           </div>
         </div>
 
