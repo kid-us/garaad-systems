@@ -13,13 +13,22 @@ import {
   SheetClose,
   SheetHeader,
 } from "@/components/ui/sheet";
+import { useTranslations } from "next-intl";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { setUserLocale } from "@/services/locale";
 
 const Navbar = () => {
+  const t = useTranslations("Header");
   const pathname = usePathname();
 
   return (
     <div className="sticky top-0 z-10">
-      <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur-2xl border-b">
+      <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur-2xl rounded-full">
         {/* Desktop */}
         <nav className="lg:flex hidden justify-between py-1.75 items-center w-full px-2">
           <Link href="/" className="text-center text-2xl">
@@ -32,14 +41,14 @@ const Navbar = () => {
             />
           </Link>
 
-          <div className="flex gap-x-14 text-[15px]">
+          <div className="flex items-center gap-x-14 text-[15px]">
             {navItems.map((n) =>
               n.type === "button" ? (
                 <Button
                   key={n.name + n.path}
                   className="hover:bg-transparent border border-primary hover:text-secondary transition-all duration-200"
                 >
-                  {n.name}
+                  {t(n.name)}
                 </Button>
               ) : (
                 <Link
@@ -47,13 +56,35 @@ const Navbar = () => {
                   key={n.name + n.path}
                   className={`flex items-center gap-x-3 text-sm hover:text-secondary hover:scale-103 hover:underline hover:underline-offset-4 transition-all duration-200 font-mono ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
                 >
-                  {n.name}
+                  {t(n.name)}
                 </Link>
               ),
             )}
-            <button>
-              <Languages className="size-5 hover:text-secondary text-zinc-400" />
-            </button>
+
+            {/* Language */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild className="cursor-pointer">
+                <Languages className="size-5 hover:text-secondary text-zinc-400" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-16! font-mono">
+                <DropdownMenuItem
+                  onClick={async () => {
+                    await setUserLocale("en");
+                  }}
+                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                >
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={async () => {
+                    await setUserLocale("sm");
+                  }}
+                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                >
+                  Somali
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </nav>
 
@@ -65,20 +96,43 @@ const Navbar = () => {
               alt="Logo"
               height={500}
               width={500}
-              className="w-36"
+              className="w-32"
             />
           </Link>
 
           <div className="py-2 px-5">
             <Sheet>
-              <button>
-                <Languages className="size-5 text-secondary md:me-10 me-5" />
-              </button>
-              <SheetTrigger asChild>
-                <button>
-                  <Menu size={20} />
-                </button>
-              </SheetTrigger>
+              {/* Language */}
+              <div className="flex items-center gap-x-5">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild className="cursor-pointer">
+                    <Languages className="size-5 hover:text-secondary text-zinc-400" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="min-w-16! font-mono">
+                    <DropdownMenuItem
+                      onClick={async () => {
+                        await setUserLocale("en");
+                      }}
+                      className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                    >
+                      English
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={async () => {
+                        await setUserLocale("sm");
+                      }}
+                      className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                    >
+                      Somali
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <SheetTrigger asChild>
+                  <button>
+                    <Menu size={20} />
+                  </button>
+                </SheetTrigger>
+              </div>
 
               <SheetContent side="right" className="w-80">
                 <SheetHeader>
@@ -96,7 +150,7 @@ const Navbar = () => {
                       {n.type === "button" ? (
                         <SheetClose asChild>
                           <Button className="mx-auto w-full h-12">
-                            {n.name}
+                            {t(n.name)}
                           </Button>
                         </SheetClose>
                       ) : (
@@ -105,7 +159,7 @@ const Navbar = () => {
                             href={n.path}
                             className={`text-xl font-mono ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
                           >
-                            {n.name}
+                            {t(n.name)}
                           </Link>
                         </SheetClose>
                       )}

@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         <div className="absolute top-62 left-0 h-12 w-full border-t"></div>
-        <div className="absolute top-128 left-0 h-12 w-full border-t"></div>
+        <div className="absolute lg:top-136 md:top-140 top-128 left-0 h-12 w-full border-t"></div>
 
         <div className="lg:flex justify-between">
           <div className="max-w-sm space-y-2">
@@ -133,7 +133,10 @@ const Footer = () => {
 
       <div className="w-full border-t"></div>
       <div className="relative max-w-7xl mx-auto border-x lg:p-10 leading-0 border-b ">
-        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-16 lg:py-0 py-10 text-secondary opacity-32">
+        <p className="text-secondary opacity-48 text-center text-xs">
+          &copy; Copyright 2026 Garaad Systems. All rights reserved.
+        </p>
+        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-10 lg:py-0 py-10 text-secondary opacity-32">
           Garaad Systems
         </p>
       </div>
