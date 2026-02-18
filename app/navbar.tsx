@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-10">
-      <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur-2xl rounded-full">
+      <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur">
         {/* Desktop */}
         <nav className="lg:flex hidden justify-between py-1.75 items-center w-full px-2">
           <Link href="/" className="text-center text-2xl">
@@ -37,16 +37,16 @@ const Navbar = () => {
               alt="Logo"
               height={500}
               width={500}
-              className="w-36"
+              className="w-32"
             />
           </Link>
 
-          <div className="flex items-center gap-x-14 text-[15px]">
+          <div className="flex items-center gap-x-11 text-[15px]">
             {navItems.map((n) =>
               n.type === "button" ? (
                 <Button
                   key={n.name + n.path}
-                  className="hover:bg-transparent border border-primary hover:text-secondary transition-all duration-200"
+                  className="hover:bg-transparent border border-primary hover:text-secondary transition-all duration-200 text-[15px]"
                 >
                   {t(n.name)}
                 </Button>
@@ -54,7 +54,7 @@ const Navbar = () => {
                 <Link
                   href={n.path}
                   key={n.name + n.path}
-                  className={`flex items-center gap-x-3 text-sm hover:text-secondary hover:scale-103 hover:underline hover:underline-offset-4 transition-all duration-200 font-mono ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
+                  className={`flex items-center gap-x-3 text-[15px] hover:text-secondary hover:scale-103 hover:underline hover:underline-offset-4 transition-all duration-200 ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
                 >
                   {t(n.name)}
                 </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
               <DropdownMenuTrigger asChild className="cursor-pointer">
                 <Languages className="size-5 hover:text-secondary text-zinc-400" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-16! font-mono">
+              <DropdownMenuContent className="min-w-16!">
                 <DropdownMenuItem
                   onClick={async () => {
                     await setUserLocale("en");
@@ -108,7 +108,7 @@ const Navbar = () => {
                   <DropdownMenuTrigger asChild className="cursor-pointer">
                     <Languages className="size-5 hover:text-secondary text-zinc-400" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="min-w-16! font-mono">
+                  <DropdownMenuContent className="min-w-16!">
                     <DropdownMenuItem
                       onClick={async () => {
                         await setUserLocale("en");
@@ -157,7 +157,7 @@ const Navbar = () => {
                         <SheetClose asChild>
                           <Link
                             href={n.path}
-                            className={`text-xl font-mono ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
+                            className={`text-xl ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
                           >
                             {t(n.name)}
                           </Link>

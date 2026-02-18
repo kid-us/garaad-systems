@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="relative font-sans border-t">
+    <div className="relative border-t">
       <div className="max-w-7xl mx-auto border-x p-10">
         <div className="max-w-lg mx-auto mb-24 py-5">
           <p className="text-center font-semibold md:text-4xl text-2xl">
