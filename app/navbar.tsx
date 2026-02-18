@@ -27,7 +27,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="sticky top-0 z-10">
+    <div className="sticky top-0 z-10 border-b border-zinc-100">
       <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur">
         {/* Desktop */}
         <nav className="lg:flex hidden justify-between py-1.75 items-center w-full px-2">
