@@ -48,7 +48,7 @@ const AboutPage = () => {
 
         {/* Who we are */}
         <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
-          <p className="font-extrabold lg:text-[40px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20">
+          <p className="font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Who we are?
           </p>
           <div className="col-span-2 space-y-5">
@@ -79,14 +79,14 @@ const AboutPage = () => {
               efficient, and citizen-centered institutions.
             </p>
           </div>
-          <p className="md:order-2 order-1 font-extrabold lg:text-[40px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20">
+          <p className="md:order-2 order-1 font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Our Vision
           </p>
         </div>
 
         {/* Our Goals */}
         <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
-          <p className="font-extrabold lg:text-[40px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20">
+          <p className="font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Our Goals
           </p>
           <div className="col-span-2 space-y-2">
@@ -141,7 +141,7 @@ const AboutPage = () => {
               Africa.
             </p>
           </div>
-          <p className="md:order-2 order-1 font-extrabold lg:text-[40px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20">
+          <p className="md:order-2 order-1 font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Our Mission
           </p>
         </div>

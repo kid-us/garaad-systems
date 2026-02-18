@@ -141,7 +141,7 @@ const Footer = () => {
         <p className="text-secondary opacity-48 text-center text-xs md:mt-0 mt-5">
           &copy; Copyright 2026 Garaad Systems. All rights reserved.
         </p>
-        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-10 lg:py-0 py-5 text-secondary opacity-32">
+        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-10 lg:py-0 py-5 text-secondary/32">
           Garaad Systems
         </p>
       </div>

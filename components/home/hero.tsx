@@ -33,7 +33,7 @@ const Hero = () => {
             >
               Get in touch
             </Button>
-            <Button variant={"outline"} className="h-11 md:px-10!">
+            <Button variant={"outline"}  onClick={() => router.push("/projects")} className="h-11 md:px-10!">
               See our Projects{" "}
               <ArrowRight className="bg-secondary/10 p-px ms-5 rounded-full" />{" "}
             </Button>
