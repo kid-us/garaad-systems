@@ -73,7 +73,7 @@ const Navbar = () => {
                   onClick={async () => {
                     await setUserLocale("en");
                   }}
-                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-sm"
                 >
                   English
                 </DropdownMenuItem>
@@ -81,7 +81,7 @@ const Navbar = () => {
                   onClick={async () => {
                     await setUserLocale("sm");
                   }}
-                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-xs"
+                  className="cursor-pointer hover:border hover:bg-secondary hover:text-white text-sm"
                 >
                   Swahili
                 </DropdownMenuItem>
@@ -151,7 +151,10 @@ const Navbar = () => {
                     <div key={n.name + n.path}>
                       {n.type === "button" ? (
                         <SheetClose asChild>
-                          <Button className="mx-auto w-full h-12">
+                          <Button
+                            onClick={() => router.push("/contact")}
+                            className="mx-auto w-full h-12"
+                          >
                             {t(n.name)}
                           </Button>
                         </SheetClose>

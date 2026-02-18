@@ -138,10 +138,10 @@ const Footer = () => {
 
       <div className="w-full border-t"></div>
       <div className="relative max-w-7xl mx-auto border-x lg:p-10 leading-0 border-b ">
-        <p className="text-secondary opacity-48 text-center text-xs">
+        <p className="text-secondary opacity-48 text-center text-xs md:mt-0 mt-5">
           &copy; Copyright 2026 Garaad Systems. All rights reserved.
         </p>
-        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-10 lg:py-0 py-10 text-secondary opacity-32">
+        <p className="text-center lg:text-[130px] md:text-[90px] text-7xl font-extrabold lg:pt-10 lg:py-0 py-5 text-secondary opacity-32">
           Garaad Systems
         </p>
       </div>

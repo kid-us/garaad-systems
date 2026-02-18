@@ -63,7 +63,7 @@ const ContactForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -82,7 +82,7 @@ const ContactForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -100,7 +100,7 @@ const ContactForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -118,7 +118,7 @@ const ContactForm = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs" />
                 </FormItem>
               )}
             />
@@ -133,11 +133,11 @@ const ContactForm = () => {
                 <FormLabel className="text-sm! mb-4">Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    className="resize-none rounded h-40! ring-0!"
+                    className="resize-none rounded h-40! ring-0! border-2"
                     placeholder="Type your message here."
                   />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-xs" />
               </FormItem>
             )}
           />
