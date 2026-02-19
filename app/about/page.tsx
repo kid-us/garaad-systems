@@ -31,7 +31,7 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="mt-24 grid md:grid-cols-3 grid-cols-2 mx-auto gap-10">
+        <div className="lg:mt-32 mt-24 grid md:grid-cols-3 grid-cols-2 mx-auto gap-10">
           <div className="text-center">
             <h1 className="lg:text-5xl text-4xl font-bold">29+</h1>
             <p className="md:text-base text-sm mt-2">Completed Projects</p>
@@ -47,7 +47,7 @@ const AboutPage = () => {
         </div>
 
         {/* Who we are */}
-        <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
+        <div className="grid md:grid-cols-3 gap-10 lg:mt-32 mt-24 items-center">
           <p className="font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Who we are?
           </p>
@@ -71,7 +71,7 @@ const AboutPage = () => {
         </div>
 
         {/* Our Vision */}
-        <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
+        <div className="grid md:grid-cols-3 gap-10 lg:mt-32 mt-24 items-center">
           <div className="md:order-1 order-2 col-span-2 space-y-5">
             <p className="md:text-lg text-base">
               To be the trusted leader in digital government and institutional
@@ -85,7 +85,7 @@ const AboutPage = () => {
         </div>
 
         {/* Our Goals */}
-        <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
+        <div className="grid md:grid-cols-3 gap-10 lg:mt-32 mt-24 items-center">
           <p className="font-extrabold lg:text-[60px] md:text-[50px] text-[40px] lg:leading-16 md:leading-12 leading-10 uppercase lg:pe-20 text-secondary/42">
             Our Goals
           </p>
@@ -132,7 +132,7 @@ const AboutPage = () => {
         </div>
 
         {/* Our Mission */}
-        <div className="grid md:grid-cols-3 gap-10 mt-24 items-center">
+        <div className="grid md:grid-cols-3 gap-10 lg:mt-32 mt-24 items-center">
           <div className="md:order-1 order-2 col-span-2 space-y-5">
             <p className="md:text-lg text-base">
               To design and deliver innovative digital solutions and advisory
