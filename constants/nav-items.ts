@@ -5,7 +5,7 @@ export const navItems: NavItems[] = [
   { name: "services", path: "#services" },
   { name: "about", path: "/about" },
   { name: "projects", path: "/projects" },
-  { name: "careers", path: "/careers" },
-  { name: "insights", path: "/insights" },
+  // { name: "careers", path: "/careers" },
+  // { name: "insights", path: "/insights" },
   { name: "get-in-touch", path: "/contact", type: "button" },
 ];

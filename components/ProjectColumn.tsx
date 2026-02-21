@@ -6,9 +6,10 @@ import React from "react";
 
 interface ProjectColumnProps {
   projects: ProjectItem[];
+  hideBtn?: boolean;
 }
 
-const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects }) => {
+const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects, hideBtn }) => {
   return (
     <>
       <div className="grid md:grid-cols-2 gap-16">
@@ -39,15 +40,17 @@ const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects }) => {
         ))}
       </div>
 
-      <div className="flex justify-center items-center mt-14">
-        <Link
-          href="/projects"
-          className="mt-4 font-semibold flex items-center group border-2 border-primary px-5 py-3 text-secondary"
-        >
-          Browse All Projects
-          <ArrowRight className="ml-2 size-5 group-hover:ml-4 transition-all duration-300 ease-in-out" />
-        </Link>
-      </div>
+      {!hideBtn && (
+        <div className="flex justify-center items-center mt-14">
+          <Link
+            href="/projects"
+            className="mt-4 font-semibold flex items-center group border-2 border-primary px-5 py-3 text-secondary"
+          >
+            Browse All Projects
+            <ArrowRight className="ml-2 size-5 group-hover:ml-4 transition-all duration-300 ease-in-out" />
+          </Link>
+        </div>
+      )}
     </>
   );
 };

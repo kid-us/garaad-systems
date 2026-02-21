@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 import { Languages, Menu } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "@/constants/nav-items";
@@ -27,12 +27,16 @@ const Navbar = () => {
   const t = useTranslations("Header");
   const pathname = usePathname();
   const router = useRouter();
+  const [sheetOpen, setSheetOpen] = useState(false);
 
-  const handleNavClick = async (e: MouseEvent, path: string) => {
+  const handleNavClick = (e: MouseEvent, path: string) => {
     // handle hash links like "#services"
     if (path.startsWith("#")) {
       e.preventDefault();
       const id = path.replace("#", "");
+
+      // Close mobile sheet if open
+      setSheetOpen(false);
 
       if (pathname === "/") {
         const el = document.getElementById(id);
@@ -40,12 +44,10 @@ const Navbar = () => {
         return;
       }
 
-      // navigate to home first, then scroll after a short delay
-      await router.push("/");
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
-      }, 60);
+      // Store the target section in sessionStorage, then navigate home.
+      // The home page will read this value after mounting and scroll to it.
+      sessionStorage.setItem("scrollTo", id);
+      router.push("/");
     }
   };
 
@@ -136,7 +138,7 @@ const Navbar = () => {
           </Link>
 
           <div className="py-2 px-5">
-            <Sheet>
+            <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
               {/* Language */}
               <div className="flex items-center gap-x-5">
                 <DropdownMenu>
@@ -193,16 +195,14 @@ const Navbar = () => {
                         </SheetClose>
                       ) : // For hash links, use a button inside SheetClose so the sheet closes and we can scroll
                       n.path.startsWith("#") ? (
-                        <SheetClose asChild>
-                          <button
-                            onClick={(e) =>
-                              handleNavClick(e as unknown as MouseEvent, n.path)
-                            }
-                            className={`text-xl ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
-                          >
-                            {t(n.name)}
-                          </button>
-                        </SheetClose>
+                        <button
+                          onClick={(e) =>
+                            handleNavClick(e as unknown as MouseEvent, n.path)
+                          }
+                          className={`text-xl ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
+                        >
+                          {t(n.name)}
+                        </button>
                       ) : (
                         <SheetClose asChild>
                           <Link
