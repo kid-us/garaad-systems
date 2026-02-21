@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MouseEvent } from "react";
 import { Languages, Menu } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "@/constants/nav-items";
@@ -27,9 +28,30 @@ const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
 
+  const handleNavClick = async (e: MouseEvent, path: string) => {
+    // handle hash links like "#services"
+    if (path.startsWith("#")) {
+      e.preventDefault();
+      const id = path.replace("#", "");
+
+      if (pathname === "/") {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+
+      // navigate to home first, then scroll after a short delay
+      await router.push("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 60);
+    }
+  };
+
   return (
-    <div className="sticky top-0 z-10 border-b border-zinc-100">
-      <header className="max-w-6xl mx-auto py-1 w-full backdrop-blur">
+    <div className="sticky top-0 z-10 border-b border-zinc-100 backdrop-blur">
+      <header className="max-w-6xl mx-auto py-1 w-full">
         {/* Desktop */}
         <nav className="lg:flex hidden justify-between py-1.75 items-center w-full px-2">
           <Link href="/" className="text-center text-2xl">
@@ -52,6 +74,17 @@ const Navbar = () => {
                 >
                   {t(n.name)}
                 </Button>
+              ) : // handle hash links (scroll) differently
+              n.path.startsWith("#") ? (
+                <button
+                  key={n.name + n.path}
+                  onClick={(e) =>
+                    handleNavClick(e as unknown as MouseEvent, n.path)
+                  }
+                  className={`flex items-center gap-x-3 text-[15px] hover:text-secondary hover:scale-103 hover:underline hover:underline-offset-4 transition-all duration-200 ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
+                >
+                  {t(n.name)}
+                </button>
               ) : (
                 <Link
                   href={n.path}
@@ -157,6 +190,18 @@ const Navbar = () => {
                           >
                             {t(n.name)}
                           </Button>
+                        </SheetClose>
+                      ) : // For hash links, use a button inside SheetClose so the sheet closes and we can scroll
+                      n.path.startsWith("#") ? (
+                        <SheetClose asChild>
+                          <button
+                            onClick={(e) =>
+                              handleNavClick(e as unknown as MouseEvent, n.path)
+                            }
+                            className={`text-xl ${pathname === n.path ? "text-secondary underline underline-offset-4 decoration-primary scale-103" : "text-zinc-500"}`}
+                          >
+                            {t(n.name)}
+                          </button>
                         </SheetClose>
                       ) : (
                         <SheetClose asChild>

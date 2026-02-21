@@ -21,7 +21,7 @@ const Services = () => {
       {services.map((s, i) => (
         <div
           key={s.title}
-          className={`border-b border-secondary/10 ${i === 0 ? "border-t" : ""}`}
+          className={`border-b border-secondary/10 bg-primary/1 ${i === 0 ? "border-t" : ""}`}
         >
           <div className="max-w-6xl mx-auto lg:px-0 md:px-10 px-5">
             <div className="grid lg:grid-cols-3 items-center">
