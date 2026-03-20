@@ -14,9 +14,14 @@ const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects, hideBtn }) => {
     <>
       <div className="grid md:grid-cols-2 gap-16">
         {projects.map((p) => (
-          <div key={p.id} className="group">
+          <Link
+            href={p.liveUrl}
+            target="_blank"
+            key={p.id}
+            className="group cursor-pointer"
+          >
             <Image
-              className="w-full h-56 md:h-80 object-cotain border border-primary group-hover:rounded group-hover:scale-105 transition-all duration-300 ease-in-out"
+              className="w-full h-56 md:h-80 border border-primary group-hover:rounded group-hover:scale-105 transition-all duration-300 ease-in-out object-contain"
               src={p.imgSrc}
               alt={p.title}
               width={500}
@@ -36,7 +41,7 @@ const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects, hideBtn }) => {
               Learn More
               <ArrowRight className="ml-2 size-5 group-hover:ml-4 transition-all duration-300 ease-in-out" />
             </Link>
-          </div>
+          </Link>
         ))}
       </div>
 

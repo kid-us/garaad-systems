@@ -1,12 +1,12 @@
 import { FooterType, SocialMedia } from "@/types/footer-types";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 
 export const footerItems: FooterType[] = [
   // Company
   { category: "Company", name: "About Us", path: "/about-us" },
   { category: "Company", name: "Leadership", path: "/leadership" },
   { category: "Company", name: "Careers", path: "/careers" },
-  { category: "Company", name: "Contact", path: "/contact-us" },
+  { category: "Company", name: "Contact", path: "/contact" },
   // Services
   {
     category: "Services",
@@ -66,7 +66,6 @@ export const footerItems: FooterType[] = [
 ];
 
 export const socialMedias: SocialMedia[] = [
-  { icon: Facebook, link: "#Facebook" },
-  { icon: Instagram, link: "#Instagram" },
-  { icon: Twitter, link: "#Twitter" },
+  { icon: Linkedin, link: "https://www.linkedin.com/company/garaad-creative/" },
+  { icon: Github, link: "#Facebook" },
 ];

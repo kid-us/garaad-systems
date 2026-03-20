@@ -39,17 +39,18 @@ const Footer = () => {
             <div className="flex justify-start gap-x-3 mt-4">
               <MapPin className="size-6" />
               <p className="text-sm">
-                Empire State Building, 350 5th Avenue, New York, NY10118, United
-                States
+                Burj Hasen Wali, 02, Jigjiga, Somali Region, Ethiopia.
               </p>
             </div>
             <div className="flex gap-x-3">
               <Phone className="size-4" />
-              <p className="text-sm">(+1) 1234567890</p>
+              <p className="text-sm">+251915506573</p>
             </div>
             <div className="flex gap-x-3">
               <Mail className="size-4" />
-              <p className="text-sm">info@garrad-system.com</p>
+              <a href="mailto=info@garaadsystems.com" className="text-sm">
+                info@garaadsystems.com
+              </a>
             </div>
           </div>
 

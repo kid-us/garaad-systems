@@ -99,7 +99,7 @@ const Navbar = () => {
             )}
 
             {/* Language */}
-            <DropdownMenu>
+            {/* <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer">
                 <Languages className="size-5 hover:text-secondary text-zinc-400" />
               </DropdownMenuTrigger>
@@ -121,7 +121,7 @@ const Navbar = () => {
                   Swahili
                 </DropdownMenuItem>
               </DropdownMenuContent>
-            </DropdownMenu>
+            </DropdownMenu> */}
           </div>
         </nav>
 
@@ -139,9 +139,9 @@ const Navbar = () => {
 
           <div className="py-2 px-5">
             <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-              {/* Language */}
               <div className="flex items-center gap-x-5">
-                <DropdownMenu>
+                {/* Language */}
+                {/* <DropdownMenu>
                   <DropdownMenuTrigger asChild className="cursor-pointer">
                     <Languages className="size-5 hover:text-secondary text-zinc-400" />
                   </DropdownMenuTrigger>
@@ -163,7 +163,8 @@ const Navbar = () => {
                       Somali
                     </DropdownMenuItem>
                   </DropdownMenuContent>
-                </DropdownMenu>
+                </DropdownMenu> */}
+
                 <SheetTrigger asChild>
                   <button>
                     <Menu size={20} />

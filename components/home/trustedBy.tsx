@@ -1,11 +1,15 @@
 import Image from "next/image";
 
 const trustedCompanies = [
-  "/images/github.png",
-  "/images/google.png",
-  "/images/meta.png",
-  "/images/windows.png",
-  "/images/uber.png",
+  "/images/gebeya.png",
+  "/images/flayease.png",
+  "/images/mahadho.png",
+  "/images/masaf-space.jpg",
+  "/images/sabi.jpg",
+  "/images/somalia.png",
+  "/images/somalia-2.jpg",
+  "/images/tabiye.jpg",
+  "/images/srtv.png",
 ];
 
 const TrustedBy = () => {
@@ -21,14 +25,15 @@ const TrustedBy = () => {
 
       <div className="w-full mx-auto grid grid-cols-5 md:gap-10 gap-5 justify-center items-center mt-10">
         {trustedCompanies.map((t) => (
-          <Image
-            src={t}
-            key={t}
-            alt="Trusted Company"
-            width={150}
-            height={150}
-            className="grayscale md:w-12 w-5"
-          />
+          <div key={t} className="flex items-center justify-center">
+            <Image
+              src={t}
+              alt="Trusted Company"
+              width={150}
+              height={150}
+              className={`${t === "/images/gebeya.png" ? "md:w-40!" : t === "/images/flayease.png" ? "md:w-40!" : "md:w-16 w-5"} h-16 object-contain`}
+            />
+          </div>
         ))}
       </div>
     </div>
