@@ -20,13 +20,15 @@ const ProjectColumn: React.FC<ProjectColumnProps> = ({ projects, hideBtn }) => {
             key={p.id}
             className="group cursor-pointer"
           >
-            <Image
-              className="w-full h-56 md:h-80 border border-primary group-hover:rounded group-hover:scale-105 transition-all duration-300 ease-in-out object-contain"
-              src={p.imgSrc}
-              alt={p.title}
-              width={500}
-              height={500}
-            />
+            <div className="w-full border border-primary group-hover:rounded group-hover:scale-105 transition-all duration-300 ease-in-out">
+              <Image
+                className={`h-56 md:h-80 object-contain ${p.imgSrc === "/images/somalia.png" && "scale-70"} `}
+                src={p.imgSrc}
+                alt={p.title}
+                width={500}
+                height={500}
+              />
+            </div>
             <h3 className="text-xl md:text-3xl font-semibold text-gray-900 mt-5">
               {p.title}
             </h3>
