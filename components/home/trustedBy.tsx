@@ -23,7 +23,7 @@ const TrustedBy = () => {
         <div className="h-px w-full bg-secondary/10"></div>
       </div>
 
-      <div className="w-full mx-auto grid grid-cols-5 md:gap-10 gap-5 justify-center items-center mt-10">
+      <div className="w-full mx-auto grid md:grid-cols-5 grid-cols-3 md:gap-10 gap-5 justify-center items-center mt-10">
         {trustedCompanies.map((t) => (
           <div key={t} className="flex items-center justify-center">
             <Image
@@ -31,7 +31,7 @@ const TrustedBy = () => {
               alt="Trusted Company"
               width={150}
               height={150}
-              className={`${t === "/images/gebeya.png" ? "md:w-40!" : t === "/images/flayease.png" ? "md:w-40!" : "md:w-16 w-5"} h-16 object-contain`}
+              className={`${t === "/images/gebeya.png" ? "md:w-40!" : t === "/images/flayease.png" ? "md:w-40!" : t === "/images/masaf-space.jpg" ? "md:w-32!" : "md:w-16 w-13"} h-16 object-contain`}
             />
           </div>
         ))}
