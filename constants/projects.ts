@@ -35,7 +35,7 @@ export const projects: ProjectsList = [
     title:
       "Somali Regional Government Urban Development and Construction Bureau",
     description: "License Registration Portal",
-    imgSrc: "/images/somalia.jpg",
+    imgSrc: "/images/somalia.png",
     tags: ["e-government", "identity", "platform"],
     liveUrl: "https://fe-crlis-somali.vercel.app",
     featured: true,
